@@ -6,3 +6,7 @@
     color: white;
     background-image: linear-gradient(to right, rgb(43, 43, 198), rgb(14, 14, 89));
 }
+
+.btn {
+    margin-top: 10px;
+}
