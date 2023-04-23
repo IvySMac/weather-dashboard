@@ -1,3 +1,8 @@
 .navbar {
-    
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to right, rgb(43, 43, 198), rgb(14, 14, 89));
 }
