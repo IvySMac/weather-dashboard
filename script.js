@@ -1,40 +1,28 @@
-var API_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=c2497406e274517dafa1edd628b99c41"
 
-fetch(API_BASE_URL)
-.then(function (res){
-    if (!res.ok) throw new Error('Oops');
+function todaysDate(){
+var today = new Date();
+var currentDay = document.getElementById('current-day');
+currentDay.textContent = today.toLocaleDateString('en-Us',{year: 'numeric', month: 'short', day: 'numeric'} );
+}
 
-    console.log('results:', res);
+todaysDate();
 
-    return res.json();
-})    
-.then(function (data) {
-    console.log('data:', data);
-   renderWeatherResults(data.Search);
-})
-.catch(function (error) {
-    console.error(error);
-})
+var searchButton = document.getElementById('search-button');
 
+function getWeatherResults() {
 
+  var requestUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=c2497406e274517dafa1edd628b99c41';
 
-// var searchButton = document.getElementById('search-button');
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+     console.log(data);
+      }
+    )};
 
-// function getWeatherResults() {
-
-//   var requestUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=c2497406e274517dafa1edd628b99c41';
-
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//      console.log(data);
-//       }
-//     )};
-
-// searchButton.addEventListener('click', getWeatherResults);
-
+searchButton.addEventListener('click', getWeatherResults);
 
 
 // http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=c2497406e274517dafa1edd628b99c41
