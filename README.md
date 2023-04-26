@@ -1,3 +1,12 @@
+# Weather Dashboard
+
+## Description 
+I created this exercise to have a better understanding of the fetch function and see just how useful server-side APIs can be when applied to a website. Server-side API's are powerful (and fun!) tools that can make a website useful in every-day life. 
+
+## Usage
+
+
+
 ## User Story
 ```
 AS A traveler
@@ -19,33 +28,5 @@ THEN I am again presented with current and future conditions for that city
 
 ```
 
-# Phase 1
 
-Structure
-Two columns - Search & Info
-Search
-    search bar
-    search button
-    search history
-Info
-    current: weather, temp, humidity, wind speed
-    city name, date, weather icon 
-    future: 5-day forecast with date, weather, temp, wind speed, humidity 
-
-# Phase 2
-
-get API key
-link API key with files
-
-# Phase 3 
-
-type in city
-click button
-get city info
-search info saved
-
-# Phase 4
-
-user can click city in search history
-brings up info
 
