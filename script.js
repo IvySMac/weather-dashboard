@@ -22,6 +22,7 @@ function getFiveDay(id) {
         for (i = 7; i < 40; i += 8) {
          forecast(data.list[i]);
         }
+        
         }
         )
 }
@@ -50,7 +51,6 @@ function getWeatherResults(lat, lon) {
 
 };
 function getLatLon(event) {
-    // var targetbtn=event.target
     var cityname = $(this).siblings(".city-value").val().trim();
     console.log(cityname);
     var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=5&appid=c2497406e274517dafa1edd628b99c41`
@@ -62,6 +62,7 @@ function getLatLon(event) {
             console.log(data);
             var lat = data[0].lat
             var lon = data[0].lon
+            $('.weather').empty();
             getWeatherResults(lat, lon);
 
         }
