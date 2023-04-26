@@ -12,6 +12,11 @@
     margin-top: 10px;
 }
 
+#forecast {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
 
 #current-day {
     font-size: 20px;
