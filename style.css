@@ -1,3 +1,9 @@
+body {
+    background-image: url("flowers-276014.jpg");
+    background-size: cover;
+}
+
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -8,9 +14,18 @@
     background-image: linear-gradient(to right, rgb(43, 43, 198), rgb(14, 14, 89));
 }
 
+h4 {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+}
 
 .btn {
     margin-top: 10px;
+}
+
+.card-title {
+    text-align: center;
 }
 
 .card-text {
@@ -19,26 +34,26 @@
 }
 
 .card {
+    display: flex;
+    align-items: center;
+    background-color: rgb(249, 225, 187);
     text-align: center;
+    margin: 10px;
+    padding: 10px;
 }
 
 .weather {
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-.five-day {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 #forecast {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
 }
 
 #current-day {

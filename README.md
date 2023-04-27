@@ -28,5 +28,8 @@ THEN I am again presented with current and future conditions for that city
 
 ```
 
+## Credits
+
+-background image by <a href="https://pixabay.com/photos/flowers-meadow-sunlight-summer-276014/">Larisa-K</a> on Pixabay.com
 
 

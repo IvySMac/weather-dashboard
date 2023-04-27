@@ -1,13 +1,14 @@
 
-function todaysDate() {
+function todaysDate() { //adds today's date to the top of the page 
     var today = new Date();
     var currentDay = document.getElementById('current-day');
     currentDay.textContent = today.toLocaleDateString('en-Us', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-todaysDate();
+todaysDate(); //executes the todaysDate function
 
-var searchButton = document.getElementById('search-button');
+var searchButton = document.getElementById('search-button'); 
+
 function getFiveDay(id) {
   
     var requestUrl = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=c2497406e274517dafa1edd628b99c41&units=imperial`;
@@ -18,15 +19,17 @@ function getFiveDay(id) {
         .then(function (data) {
             console.log(data);
 
-        for (i = 7; i < 40; i += 8) {
+        for (i = 7; i < 40; i += 8) { //loops through the days and creates a card for each day in the 5 day forecast
          var forecastData = data.list[i];
          var forecastDate = forecastData.dt_txt.split(' ')[0];
          var formattedDate = new Date(forecastDate).toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'});
-         var forecastTemp = forecastData.main.temp.toFixed(0) + '°F';
-         var forecastWind = forecastData.wind.speed + ' mph';
-         var forecastIcon = forecastData.weather[0].icon;
+         var forecastTemp = forecastData.main.temp.toFixed(0) + '°F'; //plucks the temp out from the API data and shortens the display so it doesn't show as a decimal
+         var forecastWind = forecastData.wind.speed + ' mph'; // finds the wind speed data in the API
+         var forecastIcon = forecastData.weather[0].icon; //finds the icon/image data in the API 
          var forecastHumidity = forecastData.main.humidity + '%';
+        //code block above ^ gives values to the variables to be used below
 
+        //code below formats each card and targets the class in the html 
          var forecastCard = $('<div>').addClass('card');
          var forecastCardBody = $('<div>').addClass('card-body');
          var forecastDateEl = $('<h5>').addClass('card-title').text(formattedDate);
@@ -36,14 +39,14 @@ function getFiveDay(id) {
          var forecastHumidityEl = $('<p>').addClass('card-text').text('Humidity: ' + forecastHumidity);
          forecastCardBody.append(forecastDateEl, forecastCode, forecastTempEl, forecastWindEl, forecastHumidityEl);
          forecastCard.append(forecastCardBody, forecastCode);
-         $('#forecast').append(forecastCard);
+         $('#forecast').append(forecastCard); //appends all the cards above in the 'forecast' div in the html file
         }
         
         }
         )
 }
 
-function getWeatherResults(lat, lon) {
+function getWeatherResults(lat, lon) { 
     var requestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c2497406e274517dafa1edd628b99c41&units=imperial`
 
     fetch(requestUrl)
@@ -64,7 +67,7 @@ function getWeatherResults(lat, lon) {
 
             var fiveCard=$('<div>').addClass('card')
             var fiveCardBody=$('<div>').addClass('card-body')
-            var fiveDayTitle=$('<h4>').addClass('five-day').text('5 Day Forecast:');
+            var fiveDayTitle=$('<h4>').addClass('five-day').attr('style', 'width: 20vw').text('5 Day Forecast:');
             fiveCard.append(fiveCardBody);
             $('.five-day').append(fiveDayTitle);
         }
