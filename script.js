@@ -55,6 +55,12 @@ function getWeatherResults(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
+
+            //adds a new label under the search bar every time someone searches a city
+            var searchHistory = $('<button>').addClass('btn btn-secondary').text(data.name);
+            $('.card-body').append(searchHistory);
+
+
             //the variables below make up the 'current weather' card 
             var card = $('<div>').addClass('card').attr('style', 'width: 20vw')
             var cardTitle = $('<h3>').addClass('card-title').text(data.name)
