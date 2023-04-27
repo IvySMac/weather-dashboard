@@ -55,6 +55,7 @@ function getWeatherResults(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
+            //the variables below make up the 'current weather' card 
             var card = $('<div>').addClass('card').attr('style', 'width: 20vw')
             var cardTitle = $('<h3>').addClass('card-title').text(data.name)
             var cardBody = $('<div>').addClass('card-body')
@@ -64,7 +65,7 @@ function getWeatherResults(lat, lon) {
             var humidityEl = $('<p>').addClass('card-text').text('Humidity: ' + data.main.humidity+ "%")
             $('.weather').append(card.append(cardTitle, iconCode, cardBody, tempEl, windEl, humidityEl))
             getFiveDay(data.id);
-
+            //creates a card for the '5 Day Forecast' header 
             var fiveCard=$('<div>').addClass('card')
             var fiveCardBody=$('<div>').addClass('card-body')
             var fiveDayTitle=$('<h4>').addClass('five-day').attr('style', 'width: 20vw').text('5 Day Forecast:');
@@ -75,7 +76,7 @@ function getWeatherResults(lat, lon) {
 
 
 };
-function getLatLon(event) {
+function getLatLon(event) { //function for grabbing the city name from the API
     var cityname = $(this).siblings(".city-value").val().trim();
     console.log(cityname);
     var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=5&appid=c2497406e274517dafa1edd628b99c41`
@@ -83,13 +84,16 @@ function getLatLon(event) {
         .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
-            console.log(data);
-            var lat = data[0].lat
+        .then(function (data) { 
+            console.log(data); 
+            //these variables store the latitude and longitude found in the API
+            var lat = data[0].lat 
             var lon = data[0].lon
+            //the block of code below empties out the search so it can be replaced with a new one
             $('.weather').empty();
             $('.five-day').empty();
             $('#forecast').empty();
+            //executes the getWeatherResults function
             getWeatherResults(lat, lon);
           
 
