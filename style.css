@@ -8,12 +8,35 @@
     background-image: linear-gradient(to right, rgb(43, 43, 198), rgb(14, 14, 89));
 }
 
+
 .btn {
     margin-top: 10px;
 }
 
+.card-text {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    text-align: center;
+}
+
+.weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.five-day {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #forecast {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 0;
 }
