@@ -55,7 +55,8 @@ function getWeatherResults(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-
+            //stores search history in local storage
+            localStorage.setItem('weatherData', JSON.stringify(data.name));
             //adds a new label under the search bar every time someone searches a city
             var searchHistory = $('<button>').addClass('btn btn-secondary').text(data.name);
             $('.card-body').append(searchHistory);
