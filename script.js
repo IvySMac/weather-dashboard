@@ -11,7 +11,7 @@ var searchButton = document.getElementById('search-button');
 
 function getFiveDay(id) {
   
-    var requestUrl = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=c2497406e274517dafa1edd628b99c41&units=imperial`;
+    var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=c2497406e274517dafa1edd628b99c41&units=imperial`;
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
@@ -78,7 +78,7 @@ function getWeatherResults(lat, lon) {
 function getLatLon(event) {
     var cityname = $(this).siblings(".city-value").val().trim();
     console.log(cityname);
-    var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=5&appid=c2497406e274517dafa1edd628b99c41`
+    var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=5&appid=c2497406e274517dafa1edd628b99c41`
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
