@@ -5,7 +5,11 @@ I created this exercise to have a better understanding of the fetch function and
 
 ## Usage
 
+!['A header that says 'Weather Dashboard' is at the top. There is a search bar to the left to input city names and in the middle shows today's weather forecast. Below today's weather forecast, there are five more sections displaying the weather for the next five days.]('')
 
+A weather app is a handy tool to have when creating plans or getting ready for the day. This application will allow you to input a city of your choice and see the weather not only for the current day, but for the next five too. You'll get access to the temperature (in Fahrenheit), wind speed, and humidity. 
+
+Check it out <a href="">here</a>!
 
 ## User Story
 ```
