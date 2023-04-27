@@ -39,7 +39,7 @@ function getFiveDay(id) {
          var forecastHumidityEl = $('<p>').addClass('card-text').text('Humidity: ' + forecastHumidity);
          forecastCardBody.append(forecastDateEl, forecastCode, forecastTempEl, forecastWindEl, forecastHumidityEl);
          forecastCard.append(forecastCardBody, forecastCode);
-         $('#forecast').append(forecastCard); //appends all the cards above in the 'forecast' div in the html file
+         $('.forecast').append(forecastCard); //appends all the cards above in the 'forecast' div in the html file
         }
         
         }
@@ -92,7 +92,7 @@ function getLatLon(event) { //function for grabbing the city name from the API
             //the block of code below empties out the search so it can be replaced with a new one
             $('.weather').empty();
             $('.five-day').empty();
-            $('#forecast').empty();
+            $('.forecast').empty();
             //executes the getWeatherResults function
             getWeatherResults(lat, lon);
           
